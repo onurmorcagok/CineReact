@@ -67,6 +67,22 @@ const HeroSlideItem = (props) => {
     item.backdrop_path ? item.backdrop_path : item.poster_path
   );
 
+  const setModalActive = async () => {
+    const modal = document.querySelector(`#modal_${item.id}`);
+    const videos = await tmdbApi.getVideos(category.movie, item.id);
+
+    if (videos.results.length > 0) {
+      const videoSrc = "https://youtube.com/embed/" + videos.results[0].key;
+      modal
+        .querySelector(".modal__content > iframe")
+        .setAttribute("src", videoSrc);
+    } else {
+      modal.querySelector(".modal__content").innerHTML = "No Trailer!";
+    }
+
+    modal.classList.toggle("active");
+  };
+
   return (
     <div
       className={`hero-slide__item ${props.className}`}
@@ -80,7 +96,7 @@ const HeroSlideItem = (props) => {
             <Button onClick={() => history.push("/movie/" + item.id)}>
               Watching Now
             </Button>
-            <OutlineButton onClick={() => console.log("trailer")}>
+            <OutlineButton onClick={setModalActive}>
               Watch Trailer
             </OutlineButton>
           </div>
