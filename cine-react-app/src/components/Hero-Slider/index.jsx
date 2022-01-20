@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Button, { OutlineButton } from "../Button/index";
+import Modal, { ModalContent } from "../Modal/index";
 
 import tmdbApi, { category, movieType } from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
@@ -52,6 +53,9 @@ function HeroSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
+      {movieItems.map((item, index) => (
+        <TrailerModal key={index} item={item} />
+      ))}
     </div>
   );
 }
@@ -86,6 +90,25 @@ const HeroSlideItem = (props) => {
         </div>
       </div>
     </div>
+  );
+};
+
+const TrailerModal = (props) => {
+  const item = props.item;
+  const iframeRef = useRef(null);
+  const onClose = () => iframeRef.current.setAttribute("src", "");
+
+  return (
+    <Modal active={false} id={`modal_${item.id}`}>
+      <ModalContent onClose={onClose}>
+        <iframe
+          ref={iframeRef}
+          width="100%"
+          height="500px"
+          title="trailer"
+        ></iframe>
+      </ModalContent>
+    </Modal>
   );
 };
 
