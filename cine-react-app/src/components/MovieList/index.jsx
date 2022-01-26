@@ -11,6 +11,8 @@ import Button from "../Button/index";
 import tmdbApi, { category } from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
+import MovieCard from "../MovieCard";
+
 const MovieList = (props) => {
   const [items, setItems] = useState([]);
 
@@ -40,7 +42,7 @@ const MovieList = (props) => {
       <Swiper grabCursor={true} spaceBetween={10} slidesPerView={"auto"}>
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <img src={apiConfig.w500Image(item.poster_path)} alt="" />
+            <MovieCard item={item} category={props.category} />
           </SwiperSlide>
         ))}
       </Swiper>
