@@ -6,6 +6,8 @@ import PageHeader from "../components/PageHeader";
 
 import { category as movieCategory } from "../api/tmdbApi";
 
+import MovieGrid from "../components/MovieGrid";
+
 function Catalog() {
   const { category } = useParams();
 
@@ -15,6 +17,11 @@ function Catalog() {
       <PageHeader>
         {category === movieCategory.movie ? "Movies" : "TV Series"}
       </PageHeader>
+      <div className="container">
+        <div className="section mb-3">
+          <MovieGrid category={category} />
+        </div>
+      </div>
     </React.Fragment>
   );
 }
