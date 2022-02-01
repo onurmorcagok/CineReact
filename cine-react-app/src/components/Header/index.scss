@@ -45,8 +45,6 @@
 
   &__nav {
     @include flex(center, unset);
-    margin-left: auto;
-    margin-right: auto;
 
     & > * ~ * {
       margin-left: 2rem;
