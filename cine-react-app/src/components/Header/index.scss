@@ -26,7 +26,7 @@
   z-index: 99;
   transition: height 0.3s ease, background-color 0.3s ease;
   background: $black;
-  opacity: 1;
+  opacity: 0.75;
 
   &.shrink {
     height: $header-shrink-height;
