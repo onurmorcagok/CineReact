@@ -6,6 +6,7 @@ import apiConfig from "../../api/apiConfig";
 
 import "./index.scss";
 import CastList from "../CastList";
+import TrailerList from "../TrailerList";
 
 const Detail = () => {
   const { category, id } = useParams();
@@ -61,6 +62,11 @@ const Detail = () => {
                 </div>
                 <CastList id={item.id} />
               </div>
+            </div>
+          </div>
+          <div className="container">
+            <div className="section mb-3">
+              <TrailerList id={item.id} />
             </div>
           </div>
         </>

@@ -13,8 +13,7 @@ const CastList = (props) => {
   useEffect(() => {
     const getCredits = async () => {
       const response = await tmdbApi.credits(category, props.id);
-      console.log(response);
-      setCasts(response.cast.slice(0, 20));
+      setCasts(response.cast.slice(0, 16));
     };
     getCredits();
   }, [category, props.id]);
@@ -31,7 +30,7 @@ const CastList = (props) => {
           ></div>
           <p className="casts__item__name">{item.name}</p>
           <p className="casts__item__name">
-            <b>Character {item.character}</b>
+            <b>{item.character}</b>
           </p>
         </div>
       ))}
