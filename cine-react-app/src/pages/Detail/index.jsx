@@ -5,6 +5,7 @@ import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
 import "./index.scss";
+import CastList from "../CastList";
 
 const Detail = () => {
   const { category, id } = useParams();
@@ -58,6 +59,7 @@ const Detail = () => {
                 <div className="section__header">
                   <h2>Cast</h2>
                 </div>
+                <CastList id={item.id} />
               </div>
             </div>
           </div>
