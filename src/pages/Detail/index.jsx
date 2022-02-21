@@ -8,6 +8,8 @@ import "./index.scss";
 import CastList from "../CastList";
 import TrailerList from "../TrailerList";
 
+import MovieList from "../../components/MovieList";
+
 const Detail = () => {
   const { category, id } = useParams();
   const [item, setItem] = useState(null);
@@ -67,6 +69,12 @@ const Detail = () => {
           <div className="container">
             <div className="section mb-3">
               <TrailerList id={item.id} />
+            </div>
+            <div className="section mb-3">
+              <div className="section__header mb-2">
+                <h2 className="title__category">Similar {category}</h2>
+              </div>
+              <MovieList category={category} type="similar" id={item.id} />
             </div>
           </div>
         </>

@@ -12,7 +12,7 @@ const VideoList = (props) => {
   useEffect(() => {
     const getVideos = async () => {
       const response = await tmdbApi.getVideos(category, props.id);
-      setVideos(response.results.slice(0, 5));
+      setVideos(response.results.slice(0, 3));
     };
     getVideos();
   }, [category, props.id]);
