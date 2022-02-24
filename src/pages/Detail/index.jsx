@@ -57,6 +57,9 @@ const Detail = () => {
                     </span>
                   ))}
               </div>
+              <div className="tagline">
+                <b>{item.tagline}</b>
+              </div>
               <p className="overview">{item.overview}</p>
               <div className="cast">
                 <div className="section__header">
