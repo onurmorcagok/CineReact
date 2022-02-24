@@ -92,6 +92,12 @@ const HeroSlideItem = (props) => {
         <div className="hero-slide__item__content__info">
           <h2 className="title">{item.title}</h2>
           <div className="overview">{item.overview}</div>
+          <div className="vote_average">
+            <b>Vote Average: {item.vote_average}</b>
+          </div>
+          <div className="spoken_languages">
+            <b>Release Date: {item.release_date}</b>
+          </div>
           <div className="btns">
             <Button onClick={() => history.push("/movie/" + item.id)}>
               Watch Now
