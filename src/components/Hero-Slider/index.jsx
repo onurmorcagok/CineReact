@@ -95,7 +95,7 @@ const HeroSlideItem = (props) => {
           <div className="vote_average">
             <b>Vote Average: {item.vote_average}</b>
           </div>
-          <div className="spoken_languages">
+          <div className="release_date">
             <b>Release Date: {item.release_date}</b>
           </div>
           <div className="btns">

@@ -49,6 +49,9 @@ const Detail = () => {
             </div>
             <div className="movie-content__info">
               <h2 className="title">{item.title || item.name}</h2>
+              <div className="tagline">
+                <h3>{item.tagline}</h3>
+              </div>
               <div className="genres">
                 {item.genres &&
                   item.genres.slice(0, 5).map((genre, id) => (
@@ -60,8 +63,13 @@ const Detail = () => {
               <div className="release_date">
                 <b>Release Date: {item.release_date}</b>
               </div>
-              <div className="tagline">
-                <b>{item.tagline}</b>
+              <div className="spoken_languages">
+                <b>
+                  Spoken Languages:
+                  {item.spoken_languages.map((lang) => (
+                    <b>{" " + lang.name + " "}</b>
+                  ))}
+                </b>
               </div>
               <p className="overview">{item.overview}</p>
               <div className="cast">
