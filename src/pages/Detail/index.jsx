@@ -66,8 +66,8 @@ const Detail = () => {
               <div className="spoken_languages">
                 <b>
                   Spoken Languages:
-                  {item.spoken_languages.map((lang) => (
-                    <b>{" " + lang.name + " "}</b>
+                  {item.spoken_languages.map((lang, index) => (
+                    <b key={index}>{" " + lang.name + " "}</b>
                   ))}
                 </b>
               </div>
