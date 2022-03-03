@@ -11,7 +11,6 @@ import MovieGrid from "../components/MovieGrid";
 function Catalog() {
   const { category } = useParams();
 
-  //console.log(category);
   return (
     <React.Fragment>
       <PageHeader>
