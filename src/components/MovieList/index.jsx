@@ -4,12 +4,8 @@ import PropTypes from "prop-types";
 import "./index.scss";
 
 import { SwiperSlide, Swiper } from "swiper/react";
-import { Link } from "react-router-dom";
-
-import Button from "../Button/index";
 
 import tmdbApi, { category } from "../../api/tmdbApi";
-import apiConfig from "../../api/apiConfig";
 
 import MovieCard from "../MovieCard";
 

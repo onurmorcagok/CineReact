@@ -60,6 +60,9 @@ const Detail = () => {
                     </span>
                   ))}
               </div>
+              <div className="runtime">
+                <b>Runtime: {item.runtime} minutes</b>
+              </div>
               <div className="release_date">
                 <b>Release Date: {item.release_date}</b>
               </div>

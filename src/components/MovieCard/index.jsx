@@ -5,7 +5,6 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 import Button from "../Button/index";
 
-import category from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
 const MovieCard = (props) => {
