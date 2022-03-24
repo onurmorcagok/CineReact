@@ -34,7 +34,7 @@
   }
 
   &__wrap {
-    @include flex(center, space-evenly);
+    @include flex(center, space-between);
     height: 100%;
     padding: 0 2rem;
 
